@@ -27,7 +27,10 @@ function modify(req, res) {
 }
 
 function destroy(req, res) {
-  res.send(`delete post with id: ${req.params.id}`);
+  const id = parseInt(req.params.id);
+
+  posts = posts.filter((post) => post.id !== id);
+  console.log("changed list", posts);
 }
 
 module.exports = {
