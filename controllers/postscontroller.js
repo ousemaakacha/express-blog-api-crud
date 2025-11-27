@@ -17,7 +17,8 @@ function get(req, res) {
 }
 
 function store(req, res) {
-  res.send("New post here");
+  console.log("received data:", req.body);
+  res.send("stored");
 }
 
 function update(req, res) {

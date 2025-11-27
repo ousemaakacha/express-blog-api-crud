@@ -48,6 +48,14 @@ const posts = [
       "Ricette al forno",
     ],
   },
+
+  {
+    id: 6,
+    title: "Zuppa di lenticchie",
+    content: `La zuppa di lenticchie è un piatto semplice e nutriente, perfetto per le giornate più fredde. Le lenticchie sono un'ottima fonte di proteine vegetali, fibre e minerali, rendendo questa zuppa non solo gustosa ma anche salutare. La nostra ricetta prevede l'uso di ingredienti freschi come carote, sedano, cipolla e pomodori, arricchiti con erbe aromatiche per un sapore avvolgente. Servita con crostini di pane tostato, la zuppa di lenticchie è ideale come piatto unico o come antipasto sostanzioso.`,
+    image: "/imgs/posts/zuppa_lenticchie.jpeg",
+    tags: ["Zuppe", "Ricette vegetariane", "Piatti unici"],
+  },
 ];
 
 module.exports = posts;
