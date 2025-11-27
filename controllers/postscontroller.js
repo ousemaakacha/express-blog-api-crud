@@ -30,11 +30,29 @@ function store(req, res) {
 
   post.push(newPOst);
 
-  console.log("updated with new post", posts);
+  console.log("stored new post", posts);
 }
 
 function update(req, res) {
-  res.send(`POst updated with id: ${req.params.id}`);
+  const id = parseInt(req.params.id);
+  const data = req.body;
+
+  const index = posts.findIndex((p) => p.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: "Post not found" });
+  }
+
+  const updatedPost = {
+    id,
+    ...data,
+  };
+
+  posts[index] = updatedPost;
+
+  console.log("updated post:", updatedPost);
+
+  res.json(updatedPost);
 }
 
 function modify(req, res) {
