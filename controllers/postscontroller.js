@@ -17,8 +17,20 @@ function get(req, res) {
 }
 
 function store(req, res) {
-  console.log("received data:", req.body);
-  res.send("stored");
+  const data = req.body;
+  const newId = posts.length > 0 ? posts[posts.length - 1].id + 1 : 1;
+
+  const newPOst = {
+    id: newId,
+    title: data.title,
+    content: data.content,
+    image: data.image,
+    tags: data.tags,
+  };
+
+  post.push(newPOst);
+
+  console.log("updated with new post", posts);
 }
 
 function update(req, res) {
