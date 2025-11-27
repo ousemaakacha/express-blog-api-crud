@@ -1,5 +1,5 @@
 const posts = require("../data/posts");
-let posts = require("../data/posts");
+let post = require("../data/posts");
 
 function index(req, res) {
   res.send("Posts List");
