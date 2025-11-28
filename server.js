@@ -7,6 +7,10 @@ app.use(express.static("public"));
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("hello server");
+});
+
 app.use("/posts", postRoutes);
 
 app.use((req, res) => {
@@ -21,10 +25,6 @@ app.use((err, req, res, next) => {
     error: "Internal Server Error",
     message: err.message,
   });
-});
-
-app.get("/", (req, res) => {
-  res.send("hello server");
 });
 
 app.listen(PORT, () => {
