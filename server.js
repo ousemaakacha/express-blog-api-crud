@@ -9,6 +9,13 @@ app.use(express.json());
 
 app.use("/posts", postRoutes);
 
+app.use((req, res) => {
+  res.status(404).json({
+    error: "Endpoint not found",
+    message: "Bro dont try again cause you want find anythig...",
+  });
+});
+
 app.get("/", (req, res) => {
   res.send("hello server");
 });
